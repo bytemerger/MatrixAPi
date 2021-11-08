@@ -23,7 +23,6 @@ class MatrixController extends Controller
             return $response;
         }
         $input = $validator->validated();
-        var_dump($input['matrixA']);
         $result = MatrixManager::multiply($input['matrixA'],$input['matrixB']);
         if($result === false){
             $response->setStatusCode(400);
@@ -31,6 +30,6 @@ class MatrixController extends Controller
             $response->setContent(["message" => "The matrix cannot be multiplied"]);
             return $response;
         }
-        return $result;
+        return ["result" => $result];
     }
 }

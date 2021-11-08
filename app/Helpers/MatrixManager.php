@@ -6,7 +6,7 @@ class MatrixManager
 {
     public static function multiply(array $matrix1, array $matrix2)
     {
-        if(count($matrix1[0]) != count($matrix2))
+        if(count($matrix2) != count($matrix1[0]))
         {
             return false;
         }
